@@ -1,0 +1,61 @@
+.alert {
+    position: relative;
+    display: flex;
+    // 文字样式
+    font-weight: $alert-font-weight;
+    font-family: $alert-font-family;
+    font-size: $alert-font-size;
+    color: $body-color;
+    word-wrap: break-word;
+    border-radius: $border-radius;
+    padding: $alert-padding-y $alert-padding-x;
+    min-width: 10rem;
+    .content {
+        flex: 1;
+        min-width: 0;
+    }
+    .description {
+        display: none;
+        font-size: $font-size-base -.25rem;
+        line-height: $font-size-base + .5rem;
+    }
+    .close-icon {
+        margin-left: 1rem;
+        padding: 0;
+        overflow: hidden;
+        font-size: $font-size-sm;
+        line-height: $font-size-sm;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: lighten($black, 67.5%);
+        cursor: pointer;
+        &:hover {
+            color: lighten($black, 52.5%);
+        }
+    }
+}
+
+.invisible {
+    transition:cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s visibility,cubic-bezier(0.075, 0.82, 0.165, 1) opacity 0.5s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+// @mixin alert-style ($background,
+//     $border,
+//     $color)
+
+.alert-info {
+    @include alert-style($alert-info-bg-color, $info, $black)
+}
+.alert-success {
+    @include alert-style($alert-success-bg-color, $success, $black)
+}
+.alert-warning {
+    @include alert-style($alert-warning-bg-color, $warning, $black)
+}
+.alert-error {
+    @include alert-style($alert-error-bg-color, $danger, $black)
+}
