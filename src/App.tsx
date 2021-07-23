@@ -2,7 +2,9 @@ import React from 'react';
 import './App.css'
 import Button from './components/Button/button'
 import Alert from './components/Alert/alert'
-
+import Menu from './components/Menu/menu'
+import MenuItem from './components/Menu/menuItem'
+import SubMenu from './components/Menu/subMenu';
 function App() {
   return (
     // 展示Button组件
@@ -14,10 +16,52 @@ function App() {
         <Button >Default</Button>
       </div>
       <div className='container'>
-        <Alert type="success" title="Success" desc="Success Description" closeable={true} onClose={() => alert('close')}/>
-        <Alert type="info" title="Info" desc="Info Description"/>
-        <Alert type="error" title="Error" desc="Error Description"/>
-        <Alert type="warning" title="Warning" desc="Warning Description"/>
+        <Alert type="success" title="Success" desc="Success Description" closeable={true} onClose={() => alert('close')} />
+        <Alert type="info" title="Info" desc="Info Description" />
+        <Alert type="error" title="Error" desc="Error Description" />
+        <Alert type="warning" title="Warning" desc="Warning Description" />
+      </div>
+      <div className="container">
+        <Menu onSelect={(index) => alert(index)}>
+          <MenuItem >
+            link 1
+          </MenuItem>
+          <MenuItem disabled>
+            link 2
+          </MenuItem>
+          <SubMenu title="drop down">
+            <MenuItem>
+              drop down 1
+            </MenuItem>
+            <MenuItem>
+              drop down 2
+            </MenuItem>
+          </SubMenu>
+          <MenuItem>
+            link 3
+          </MenuItem>
+        </Menu>
+        <Menu mode='vertical' defaultOpenSubMenus={['2']}>
+          <MenuItem >
+            link 1
+          </MenuItem>
+          <MenuItem disabled>
+            link 2
+          </MenuItem>
+          <SubMenu title="drop down">
+            <MenuItem>
+              drop down 1
+            </MenuItem>
+            <MenuItem>
+              drop down 2
+            </MenuItem>
+          </SubMenu>
+          <MenuItem>
+            link 3
+          </MenuItem>
+        </Menu>
+      </div>
+      <div className="container">
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 export type AlertType = 'success' | 'error' | 'warning' | 'info';
 
-interface BaseAlertProps {
+export interface BaseAlertProps {
     type?: AlertType;
     title?: string;
     desc?: string;

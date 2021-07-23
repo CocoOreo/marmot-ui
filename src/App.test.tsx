@@ -1,9 +1,15 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import Alert,{ BaseAlertProps } from './components/Alert/alert';
 
+
+const AlertProps:BaseAlertProps = {
+  type:'success',
+  title:'Success',
+  desc: 'Success Description',
+}
 test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  render(<Alert {...AlertProps} />);
+  const AlertElement = screen.getByText('Success');
+  expect(AlertElement).toBeInTheDocument();
 });
