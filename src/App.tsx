@@ -5,9 +5,11 @@ import Alert from './components/Alert/alert'
 import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/menuItem'
 import SubMenu from './components/Menu/subMenu';
+import Icon from './components/Icon/icon';
 function App() {
   return (
     // 展示Button组件
+
     <div>
       <div className="container">
         <Button btnType='primary' onClick={() => { alert('This is a primary button') }}>Large Primary</Button>
@@ -62,6 +64,10 @@ function App() {
         </Menu>
       </div>
       <div className="container">
+        <Icon icon={'coffee'} theme={'primary'} size={'2x'}/>
+        <Icon icon={'check'} theme={'danger'} size={'2x'}/>
+        <Icon icon={'square'} theme={'warning'} size={'2x'}/>
+        <Icon icon={'arrow-left'} theme={'info'} size={'2x'}/>
       </div>
     </div>
   );
